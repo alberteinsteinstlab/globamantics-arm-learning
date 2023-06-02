@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       resource_group_name: rg-stg-githubactions
-      location: nordteurope
+      location: northeurope
      
     environment:
       name: staging  
