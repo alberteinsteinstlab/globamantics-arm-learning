@@ -31,6 +31,7 @@ jobs:
     
       - name: Deploy Storage Account
         uses: Azure/arm-deploy@v1
+        id: storageAccountDeploy
         with:
           scope: resourcegroup
           resourceGroupName: rg-githubactions
@@ -40,3 +41,5 @@ jobs:
             ./arm-templates/storageaccount.parameters.json
             storageAccountName=globostg002stefanpe
           deploymentMode: incremental
+
+      - run: echo ${{ steps.storageAccountDeploy.outputs.BlobUri }}
